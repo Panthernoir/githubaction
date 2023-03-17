@@ -4,6 +4,6 @@ on:
     
 jobs:
   run-npm-test:
-    uses: ./.github/workflows/exo4.yaml
+    uses: ./.github/workflows/reusable test.yaml
     with:
       node-version: 14
