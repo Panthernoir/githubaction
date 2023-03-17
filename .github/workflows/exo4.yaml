@@ -1,4 +1,4 @@
-name: exo4 test
+name: reusable test
 on:
   workflow_call:
     inputs:
