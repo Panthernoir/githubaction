@@ -1,5 +1,4 @@
 name: Checkout
-
 on: 
   workflow_dispatch:
                
@@ -12,4 +11,3 @@ jobs:
       with:
         node-version: 16
     - run: npm install
-      # TO COMPLETE      
