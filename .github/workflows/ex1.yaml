@@ -1,4 +1,5 @@
-name: npm test
+name: Checkout
+
 on: 
   workflow_dispatch:
                
@@ -6,4 +7,11 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps: 
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    - run: npm ci
+    - run: npm test
       # TO COMPLETE      
+    
