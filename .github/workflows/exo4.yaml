@@ -1,4 +1,4 @@
-name: npm test
+name: exo4 test
 on:
   workflow_call:
     inputs:
