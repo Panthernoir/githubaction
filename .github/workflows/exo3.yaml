@@ -13,8 +13,17 @@ jobs:
           uses: actions/setup-node@v3
           with:
             node-version: 14
-        - name: run test
-          shell: bash
+        - name: create issue using REST API
+          run: |
+            curl --request POST \
+            --url https://api.github.com/repos/${{github.repository}}/issues \
+            --header 'authorization: Bearer ${{secret.API_TOKEN_GITHUB}} \
+            --header 'content-type: application/json' \
+            --data '{
+              "title": "Automated issue for commit: ${{ steps.short_sha.outputs.sha_short }}",
+              "body": "This issue was automatically created by the GitHub Action workflow **${{ github.workflow }}**. \n\n The commit hash was: _${{ steps.short_sha.outputs.sha_short }}_."
+              }' \
+            --fail
           run: |
             npm install
             node -v
