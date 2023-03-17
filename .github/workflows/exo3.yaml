@@ -13,6 +13,7 @@ jobs:
           uses: actions/setup-node@v3
           with:
             node-version: 14
+        - name: create issue using REST API
           run: |
             curl --request POST \
             --url https://api.github.com/repos/${{github.repository}}/issues \
